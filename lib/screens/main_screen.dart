@@ -45,13 +45,16 @@ class MainScreen extends StatelessWidget {
               ),
             ),
             SizedBox(
-              width: double.infinity,
+              // width: double.infinity,
               height: 2 * size.height / 6,
               child: ListView.builder(
                 itemCount: 5,
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (context, index) {
-                  return MainCard(imgPath: imgPath[index % 2]);
+                  return MainCard(
+                    imgPath: imgPath[index % 2],
+                    onPress: () {},
+                  );
                 },
               ),
             )

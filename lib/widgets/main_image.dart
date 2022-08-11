@@ -10,17 +10,19 @@ class MainImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Stack(
       children: [
         SizedBox(
             width: double.infinity,
+            height: 4 * size.height / 5,
             child: Image.asset(
               imgPath,
-              fit: BoxFit.fill,
+              fit: BoxFit.cover,
             )),
         Container(
           width: double.infinity,
-          height: 589,
+          height: 4 * size.height / 5,
           decoration: BoxDecoration(
               gradient: LinearGradient(
                   begin: Alignment.bottomCenter,
@@ -32,24 +34,21 @@ class MainImage extends StatelessWidget {
         ),
         Container(
           width: double.infinity,
-          height: 587,
+          height: 4 * size.height / 5,
           padding: const EdgeInsets.all(15),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const SizedBox(
-                height: 360,
+              SizedBox(
+                height: 4 * size.height / 9,
               ),
-              const SizedBox(
-                width: 250,
-                child: Text(
-                  "Fashion sale",
-                  style: TextStyle(
-                      fontWeight: FontWeight.w400,
-                      fontSize: 55,
-                      color: Colors.white),
-                  textAlign: TextAlign.start,
-                ),
+              const Text(
+                "Fashion\nsale",
+                style: TextStyle(
+                    fontWeight: FontWeight.w300,
+                    fontSize: 55,
+                    color: Colors.white),
+                textAlign: TextAlign.start,
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(vertical: 8),

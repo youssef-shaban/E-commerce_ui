@@ -5,15 +5,17 @@ class MainCard extends StatelessWidget {
   const MainCard({
     Key? key,
     required this.imgPath,
+    required this.onPress,
   }) : super(key: key);
 
   final String imgPath;
+  final VoidCallback onPress;
 
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return InkWell(
-      onTap: () {},
+      onTap: onPress,
       splashColor: const Color(0xffea384d),
       child: Stack(children: [
         Container(
@@ -30,7 +32,7 @@ class MainCard extends StatelessWidget {
             padding: const EdgeInsets.all(6),
             toAnimate: false,
             shape: BadgeShape.square,
-            badgeColor: Colors.black,
+            badgeColor: Color(0xff1E1F28),
             borderRadius: BorderRadius.circular(50),
             badgeContent: const Text('NEW',
                 style: TextStyle(
